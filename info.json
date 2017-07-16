@@ -1,0 +1,10 @@
+{
+  "name": "EquipmentHotkeys",
+  "version": "0.0.2",
+  "title": "Equipment Hotkeys",
+  "author": "Articulating",
+  "contact": "",
+  "homepage": "",
+  "description": "Adds hotkeys to toggle exoskeletons, night vision and personal roboports.",
+  "factorio_version": "0.15"
+}
