@@ -37,7 +37,7 @@ local function check_player(player)
 	end
 end
 
-function toggle_setting(player_index, type)
+local function toggle_setting(player_index, type)
 	local player = game.players[player_index]
 	global.equipment_settings = global.equipment_settings or {}
 	global.equipment_settings[player.index] = global.equipment_settings[player.index] or {}

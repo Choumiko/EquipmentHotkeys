@@ -1,22 +1,8 @@
-# UnminableVehicles
+Adds hotkeys to disabled/enable personal roboports, exoskeletons and night vision. Compatible with bob's mods and should work with any others that add equipment.
+The hotkeys can be changed in the Controls option menu, inside the Mods tab. By default the hotkeys are:
 
-Adds admin options to
- - Prevent vehicles from being mined
- - Teleport players to spawn and make them unable to move after they mined/rotated a vehicle (Only works if vehicles can be mined)
+F1 to toggle Exoskeletons.
 
-### Commands
+F2 to toggle Personal Roboports.
 
- - /unminable_vehicles_set_teleport : Sets the teleport location to your current position. Can only be used by admins
- - /unminable_vehicles_enable_movement : Reenables movement for stuck players. Can be used by any player (if only 1 player is online)
-
-# Changelog
-
-0.0.3
- - prevent teleported players from building and entering a vehicle
- - removed "forgotten" debug code
- 
-0.0.2
- - fixed potential desync
-
-0.0.1
- - initial release
+F8 to toggle Night Vision.
