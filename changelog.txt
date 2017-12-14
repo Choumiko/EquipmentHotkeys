@@ -1,0 +1,6 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 14. 12. 2017
+  Changes:
+    - Updated for Factorio 0.16
+    - Added mod setting to automatically disable roboports when entering a vehicle. They will be reenabled when leaving the vehicle

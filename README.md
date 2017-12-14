@@ -11,3 +11,11 @@ F1 to toggle Exoskeletons.
 F2 to toggle Personal Roboports.
 
 F8 to toggle Night Vision.
+
+Modsetting to auto disable roboports when entering a vehicle. Autoreenables when leaving the vehicle
+###Changelog
+1.0.0
+ - updated for Factorio 0.16
+
+0.0.4
+ - added setting to auto disable roboports when entering a vehicle

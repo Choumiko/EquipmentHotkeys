@@ -1,10 +1,10 @@
 {
   "name": "EquipmentHotkeys_fixed",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "title": "Equipment Hotkeys",
   "author": "Articulating, Choumiko",
   "contact": "",
   "homepage": "",
   "description": "Adds hotkeys to toggle exoskeletons, night vision and personal roboports.",
-  "factorio_version": "0.15"
+  "factorio_version": "0.16"
 }
