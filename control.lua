@@ -20,8 +20,10 @@ local function check_grid(grid, disabled_types)
                 if not disabled_types[equipment.type] and equipment.name:sub(1, 12) == "pr-disabled-" then
                     local new_equipment_name = equipment.name:sub(13)
                     replace_equipment(grid, equipment, new_equipment_name)
+                    return "enabled"
                 elseif disabled_types[equipment.type] and equipment.name:sub(1,12) ~= "pr-disabled-" then
                     replace_equipment(grid, equipment, "pr-disabled-"..equipment.name)
+                    return "disabled"
                 end
             end
         end
@@ -33,7 +35,7 @@ local function check_player(player)
     global.equipment_settings[player.index] = global.equipment_settings[player.index] or {}
     local armor = player.get_inventory(defines.inventory.player_armor)[1]
     if armor and armor.valid and armor.valid_for_read then
-        check_grid(armor.grid, global.equipment_settings[player.index])
+        return check_grid(armor.grid, global.equipment_settings[player.index])
     end
 end
 
@@ -41,14 +43,15 @@ local function toggle_setting(player_index, type)
     local player = game.players[player_index]
     global.equipment_settings = global.equipment_settings or {}
     global.equipment_settings[player.index] = global.equipment_settings[player.index] or {}
-    local new_setting = not global.equipment_settings[player.index][type]
-    if new_setting then
-        player.print({"equipment-disabled-"..type})
-    else
-        player.print({"equipment-enabled-"..type})
+    global.equipment_settings[player.index][type] = not global.equipment_settings[player.index][type]
+    local status = check_player(player)
+    if player.mod_settings.equipment_hotkeys_display_messages.value then
+        if status == "disabled" then
+            player.print({"equipment-disabled-"..type})
+        elseif status == "enabled" then
+            player.print({"equipment-enabled-"..type})
+        end
     end
-    global.equipment_settings[player.index][type] = new_setting
-    check_player(player)
 end
 
 
