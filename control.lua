@@ -15,18 +15,20 @@ end
 
 local function check_grid(grid, disabled_types)
     if grid and grid.valid then
+        local state
         for _, equipment in pairs(grid.equipment) do
             if equipment.valid and supported_types[equipment.type] then
                 if not disabled_types[equipment.type] and equipment.name:sub(1, 12) == "pr-disabled-" then
                     local new_equipment_name = equipment.name:sub(13)
                     replace_equipment(grid, equipment, new_equipment_name)
-                    return "enabled"
+                    state = "enabled"
                 elseif disabled_types[equipment.type] and equipment.name:sub(1,12) ~= "pr-disabled-" then
                     replace_equipment(grid, equipment, "pr-disabled-"..equipment.name)
-                    return "disabled"
+                    state = "disabled"
                 end
             end
         end
+        return state
     end
 end
 
