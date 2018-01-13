@@ -35,7 +35,7 @@ end
 local function check_player(player)
     global.equipment_settings = global.equipment_settings or {}
     global.equipment_settings[player.index] = global.equipment_settings[player.index] or {}
-    local armor = player.get_inventory(defines.inventory.player_armor)[1]
+    local armor = player.get_inventory(defines.inventory.player_armor) and player.get_inventory(defines.inventory.player_armor)[1]
     if armor and armor.valid and armor.valid_for_read then
         return check_grid(armor.grid, global.equipment_settings[player.index])
     end
